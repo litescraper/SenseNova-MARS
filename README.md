@@ -967,3 +967,9 @@ We would like to thank the following projects for their contributions to the dev
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=OpenSenseNova/SenseNova-MARS&type=date)](https://star-history.com/#OpenSenseNova/SenseNova-MARS&Date)
+
+## Serper-compatible endpoints
+
+Support any Serper.dev-compatible endpoint (like litescrape.com, serpbase.dev, serpensapi.org, and others)
+
+Set `SERPER_BASE_URL` to your provider's base URL and use its API key with the existing Serper key configuration. If unset, the default remains `https://google.serper.dev`. Trailing slashes and URL path prefixes are supported.

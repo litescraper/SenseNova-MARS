@@ -103,7 +103,7 @@ class GoogleSerperProvider(SearchProvider):
         
         # Search API configuration
         self.google_api_key = os.environ.get('WEBSEARCH_GOOGLE_SERPER_KEY')
-        self.search_url = "https://google.serper.dev/search"
+        self.search_url = f'{os.getenv("SERPER_BASE_URL", "https://google.serper.dev").rstrip("/")}/search'
         
         # Serper API rate limiting (max 100 req/s with token bucket)
         self._serper_rate_limiter = SerperRateLimiter(

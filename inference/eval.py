@@ -1199,7 +1199,7 @@ async def call_text_search(
     # Step 1: Search via Serper (rate limited by semaphore)
     # Search API doesn't use "num" parameter - gets default results then slices to top_k
     # Retry logic with max_attempts=3 and exponential backoff
-    url = "https://google.serper.dev/search"
+    url = f'{os.getenv("SERPER_BASE_URL", "https://google.serper.dev").rstrip("/")}/search'
     headers = {"X-API-KEY": serper_api_key, "Content-Type": "application/json"}
     payload = {"q": query}
 

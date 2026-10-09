@@ -141,7 +141,7 @@ class WebSearchAndSummarizeTool:
         self.cache_dir = self.search_config.cache_dir
         self.top_k = self.search_config.top_k
         self.google_api_key = os.environ.get('WEBSEARCH_GOOGLE_SERPER_KEY')
-        self.search_url = "https://google.serper.dev/search"
+        self.search_url = f'{os.getenv("SERPER_BASE_URL", "https://google.serper.dev").rstrip("/")}/search'
         self.excluded_extensions = self.search_config.excluded_extensions
 
     async def _initialize_orchestrator(self):
